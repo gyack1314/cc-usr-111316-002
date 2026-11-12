@@ -1,0 +1,261 @@
+{
+  "kind": "finance",
+  "valuation_date": "2025-01-01",
+  "report_currency": "R",
+  "tools": [
+    {
+      "id": "loan-30e",
+      "country": "region-a",
+      "currency": "U",
+      "disbursements": [
+        {
+          "date": "2025-01-15",
+          "amount": "120"
+        }
+      ],
+      "maturity": "2025-03-15",
+      "repayments": [
+        {
+          "date": "2025-03-15",
+          "principal": "all-outstanding"
+        }
+      ],
+      "interest_payment_dates": [
+        "2025-02-15",
+        "2025-03-15"
+      ],
+      "reset_dates": [
+        "2025-01-15"
+      ],
+      "day_count": "30E/360",
+      "capitalization_dates": [],
+      "fees": [
+        {
+          "date": "2025-02-15",
+          "amount": "3",
+          "treatment": "pay"
+        }
+      ]
+    },
+    {
+      "id": "loan-e",
+      "country": "region-b",
+      "currency": "EUR",
+      "disbursements": [
+        {
+          "date": "2025-01-31",
+          "amount": "60"
+        }
+      ],
+      "maturity": "2025-03-31",
+      "repayments": [
+        {
+          "date": "2025-03-31",
+          "principal": "all-outstanding"
+        }
+      ],
+      "interest_payment_dates": [
+        "2025-02-28",
+        "2025-03-31"
+      ],
+      "reset_dates": [
+        "2025-01-31"
+      ],
+      "day_count": "30E/360",
+      "capitalization_dates": [],
+      "fees": []
+    },
+    {
+      "id": "grant-1",
+      "country": "region-a",
+      "currency": "U",
+      "disbursements": [
+        {
+          "date": "2025-02-15",
+          "amount": "20"
+        }
+      ],
+      "maturity": null,
+      "repayments": [],
+      "interest_payment_dates": [],
+      "reset_dates": [],
+      "day_count": "30E/360",
+      "capitalization_dates": [],
+      "fees": []
+    }
+  ],
+  "channel_shares": [
+    {
+      "tool": "loan-30e",
+      "channel": "public",
+      "share": "3/5"
+    },
+    {
+      "tool": "loan-30e",
+      "channel": "bank",
+      "share": "2/5"
+    },
+    {
+      "tool": "loan-e",
+      "channel": "bank",
+      "share": "1"
+    },
+    {
+      "tool": "grant-1",
+      "channel": "public",
+      "share": "1"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s-low",
+      "weight": "1/4",
+      "rates": {
+        "loan-30e": {
+          "2025-01-15": "1/10"
+        },
+        "loan-e": {
+          "2025-01-31": "1/10"
+        }
+      },
+      "curves": {
+        "U": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-01-15": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-02-15": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-03-15": {
+            "discount": "1",
+            "fx": "1"
+          }
+        },
+        "EUR": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "3/2"
+          },
+          "2025-01-31": {
+            "discount": "1",
+            "fx": "3/2"
+          },
+          "2025-02-28": {
+            "discount": "1",
+            "fx": "3/2"
+          },
+          "2025-03-31": {
+            "discount": "1",
+            "fx": "3/2"
+          }
+        }
+      }
+    },
+    {
+      "id": "s-mid",
+      "weight": "1/2",
+      "rates": {
+        "loan-30e": {
+          "2025-01-15": "1/5"
+        },
+        "loan-e": {
+          "2025-01-31": "1/10"
+        }
+      },
+      "curves": {
+        "U": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-01-15": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-02-15": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-03-15": {
+            "discount": "1",
+            "fx": "1"
+          }
+        },
+        "EUR": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "2"
+          },
+          "2025-01-31": {
+            "discount": "1",
+            "fx": "2"
+          },
+          "2025-02-28": {
+            "discount": "1",
+            "fx": "2"
+          },
+          "2025-03-31": {
+            "discount": "1",
+            "fx": "2"
+          }
+        }
+      }
+    },
+    {
+      "id": "s-high",
+      "weight": "1/4",
+      "rates": {
+        "loan-30e": {
+          "2025-01-15": "2/5"
+        },
+        "loan-e": {
+          "2025-01-31": "1/10"
+        }
+      },
+      "curves": {
+        "U": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-01-15": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-02-15": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-03-15": {
+            "discount": "1",
+            "fx": "1"
+          }
+        },
+        "EUR": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "5/2"
+          },
+          "2025-01-31": {
+            "discount": "1",
+            "fx": "5/2"
+          },
+          "2025-02-28": {
+            "discount": "1",
+            "fx": "5/2"
+          },
+          "2025-03-31": {
+            "discount": "1",
+            "fx": "5/2"
+          }
+        }
+      }
+    }
+  ]
+}

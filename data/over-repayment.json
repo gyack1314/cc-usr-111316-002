@@ -1,0 +1,72 @@
+{
+  "kind": "finance",
+  "valuation_date": "2025-01-01",
+  "report_currency": "R",
+  "tools": [
+    {
+      "id": "loan-over",
+      "country": "region-a",
+      "currency": "U",
+      "disbursements": [
+        {
+          "date": "2025-01-01",
+          "amount": "100"
+        }
+      ],
+      "maturity": "2025-03-01",
+      "repayments": [
+        {
+          "date": "2025-02-01",
+          "principal": "60"
+        },
+        {
+          "date": "2025-03-01",
+          "principal": "60"
+        }
+      ],
+      "interest_payment_dates": [
+        "2025-03-01"
+      ],
+      "reset_dates": [
+        "2025-01-01"
+      ],
+      "day_count": "30E/360",
+      "capitalization_dates": [],
+      "fees": []
+    }
+  ],
+  "channel_shares": [
+    {
+      "tool": "loan-over",
+      "channel": "public",
+      "share": "1"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s1",
+      "weight": "1",
+      "rates": {
+        "loan-over": {
+          "2025-01-01": "1/10"
+        }
+      },
+      "curves": {
+        "U": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-02-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-03-01": {
+            "discount": "1",
+            "fx": "1"
+          }
+        }
+      }
+    }
+  ]
+}

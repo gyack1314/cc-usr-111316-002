@@ -1,0 +1,69 @@
+{
+  "kind": "finance",
+  "valuation_date": "2025-01-01",
+  "report_currency": "R",
+  "tools": [
+    {
+      "id": "loan-norate",
+      "country": "region-a",
+      "currency": "U",
+      "disbursements": [
+        {
+          "date": "2025-01-01",
+          "amount": "100"
+        }
+      ],
+      "maturity": "2025-02-01",
+      "repayments": [
+        {
+          "date": "2025-02-01",
+          "principal": "all-outstanding"
+        }
+      ],
+      "interest_payment_dates": [
+        "2025-02-01"
+      ],
+      "reset_dates": [
+        "2025-01-01",
+        "2025-01-15"
+      ],
+      "day_count": "30E/360",
+      "capitalization_dates": [],
+      "fees": []
+    }
+  ],
+  "channel_shares": [
+    {
+      "tool": "loan-norate",
+      "channel": "public",
+      "share": "1"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s1",
+      "weight": "1",
+      "rates": {
+        "loan-norate": {
+          "2025-01-01": "1/10"
+        }
+      },
+      "curves": {
+        "U": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-01-15": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2025-02-01": {
+            "discount": "1",
+            "fx": "1"
+          }
+        }
+      }
+    }
+  ]
+}
