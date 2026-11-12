@@ -1,0 +1,113 @@
+{
+  "kind": "finance",
+  "valuation_date": "2025-01-01",
+  "report_currency": "R",
+  "tools": [
+    {
+      "id": "loan-1",
+      "country": "region-a",
+      "currency": "U",
+      "disbursements": [
+        {
+          "date": "2025-01-01",
+          "amount": "100"
+        }
+      ],
+      "maturity": "2026-01-01",
+      "repayments": [
+        {
+          "date": "2026-01-01",
+          "principal": "100"
+        }
+      ],
+      "interest_payment_dates": [
+        "2026-01-01"
+      ],
+      "reset_dates": [
+        "2025-01-01"
+      ],
+      "day_count": "Actual/365F",
+      "capitalization_dates": [],
+      "fees": []
+    },
+    {
+      "id": "grant-1",
+      "country": "region-a",
+      "currency": "U",
+      "disbursements": [
+        {
+          "date": "2025-01-01",
+          "amount": "20"
+        }
+      ],
+      "maturity": null,
+      "repayments": [],
+      "interest_payment_dates": [],
+      "reset_dates": [],
+      "day_count": "Actual/365F",
+      "capitalization_dates": [],
+      "fees": []
+    }
+  ],
+  "channel_shares": [
+    {
+      "tool": "loan-1",
+      "channel": "public",
+      "share": "3/5"
+    },
+    {
+      "tool": "loan-1",
+      "channel": "bank",
+      "share": "2/5"
+    },
+    {
+      "tool": "grant-1",
+      "channel": "public",
+      "share": "1"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s1",
+      "weight": "1/2",
+      "rates": {
+        "loan-1": {
+          "2025-01-01": "1/10"
+        }
+      },
+      "curves": {
+        "U": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2026-01-01": {
+            "discount": "9/10",
+            "fx": "1"
+          }
+        }
+      }
+    },
+    {
+      "id": "s2",
+      "weight": "1/2",
+      "rates": {
+        "loan-1": {
+          "2025-01-01": "1/5"
+        }
+      },
+      "curves": {
+        "U": {
+          "2025-01-01": {
+            "discount": "1",
+            "fx": "1"
+          },
+          "2026-01-01": {
+            "discount": "4/5",
+            "fx": "1"
+          }
+        }
+      }
+    }
+  ]
+}
